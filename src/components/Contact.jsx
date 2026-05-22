@@ -5,7 +5,7 @@ import { contact } from '../data/portfolio'
 export default function Contact() {
   const formRef = useRef(null)
   const [status, setStatus] = useState('idle') // idle | sending | sent | error
-  const [form, setForm] = useState({ name: '', email: '', message: '' })
+  const [form, setForm] = useState({ from_name: '', from_email: '', message: '' })
 
   const handleChange = (e) => {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
@@ -28,11 +28,11 @@ export default function Contact() {
         'SOn1DFV--_ZIzb9sj'
       )
       setStatus('sent')
-      setForm({ name: '', email: '', message: '' })
+      setForm({ from_name: '', from_email: '', message: '' })
     } catch {
       // Fallback to mailto if EmailJS not configured
-      const subject = encodeURIComponent(`Portfolio enquiry from ${form.name}`)
-      const body = encodeURIComponent(`${form.message}\n\n—\n${form.name}\n${form.email}`)
+      const subject = encodeURIComponent(`Portfolio enquiry from ${form.from_name}`)
+      const body = encodeURIComponent(`${form.message}\n\n—\n${form.from_name}\n${form.from_email}`)
       window.open(`mailto:${contact.email}?subject=${subject}&body=${body}`)
       setStatus('idle')
     }
@@ -158,7 +158,7 @@ export default function Contact() {
                   <input
                     type="text"
                     name="from_name"
-                    value={form.name}
+                    value={form.from_name}
                     onChange={handleChange}
                     required
                     placeholder="Your name"
@@ -175,7 +175,7 @@ export default function Contact() {
                   <input
                     type="email"
                     name="from_email"
-                    value={form.email}
+                    value={form.from_email}
                     onChange={handleChange}
                     required
                     placeholder="your@email.com"
