@@ -142,7 +142,7 @@ export default function Hero() {
               View My Work
             </button>
             <a
-              href="/portfolio/cv.pdf"
+              href="/cv.pdf"
               target="_blank"
               rel="noreferrer"
               className="font-mono text-sm px-6 py-3 border transition-all duration-200"

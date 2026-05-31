@@ -85,7 +85,7 @@ export default function Navbar() {
             </button>
           ))}
           <a
-            href="/portfolio/cv.pdf"
+            href="/cv.pdf"
             target="_blank"
             rel="noreferrer"
             className="font-mono text-xs tracking-wider uppercase px-3 py-1.5 border transition-all duration-200 hover:text-navy hover:bg-accent"
@@ -153,7 +153,7 @@ export default function Navbar() {
                 </button>
               ))}
               <a
-                href="/portfolio/cv.pdf"
+                href="/cv.pdf"
                 target="_blank"
                 rel="noreferrer"
                 className="font-mono text-sm tracking-wider uppercase w-fit px-3 py-1.5 border"
